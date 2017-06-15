@@ -1,0 +1,41 @@
+class Demo2{
+	public static void main(String[] args){
+		/*
+		小娟的妈妈每天给她3元钱，她都会存起来，但是，每当这一天的天数是存钱的第6天或者6的倍数的话，她都会花去5元钱，请问，经过多少天，小娟才可以存到100元钱。
+		*/
+		int money=0,day=0;
+		//用for循环
+		for(;money<100;){
+			day++;
+			money+=3;
+			if(day%6==0){
+				money-=5;
+				continue;
+			}
+			//System.out.println(day+"天，money："+money);
+		}
+		System.out.println("经过"+day+"天后，小娟存下"+money+"元钱");
+		//用while死循环
+		money=0;day=0;//天数清零，钱数清零
+		while(true){
+			day++;
+			money+=3;
+			if(day%6==0){
+				money-=5;
+			}
+			if(money>=100)
+				break;
+		}
+		System.out.println("经过"+day+"天后，小娟存下"+money+"元钱");
+		//直接用while循环
+		money=0;day=0;//天数清零，钱数清零
+		while(money<100){
+			day++;
+			money+=3;
+			if(day%6==0){
+				money-=5;
+			}
+		}
+		System.out.println("经过"+day+"天后，小娟存下"+money+"元钱");
+	}
+}
